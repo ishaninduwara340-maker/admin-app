@@ -425,6 +425,84 @@
         .hs-cols > div { min-width: 0; }
         @media (max-width: 1250px) { .hs-cols { grid-template-columns: minmax(0, 1fr); } }
         #homeSections .card { overflow: hidden; }
+
+        /* ===== Customers manager ===== */
+        .cm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:18px}
+        .cm-stat{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:18px;background:linear-gradient(160deg,rgba(30,30,44,.75),rgba(18,18,26,.92));border:1px solid rgba(0,200,255,.25);box-shadow:0 8px 24px rgba(0,0,0,.35)}
+        .cm-stat .cm-ic{width:46px;height:46px;border-radius:14px;display:grid;place-items:center;font-size:1.3rem;background:linear-gradient(135deg,rgba(0,200,255,.25),rgba(255,61,129,.25));border:1px solid var(--border-strong)}
+        .cm-stat small{display:block;color:var(--text-muted);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em}
+        .cm-stat b{font-family:'Space Grotesk',sans-serif;font-size:1.45rem}
+        .cm-bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between;margin-bottom:12px}
+        .cm-bar h3{margin:0}
+        .cm-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+        .cm-tools input,.cm-tools select{background:var(--sidebar-bg);border:1px solid var(--border-strong);color:#fff;border-radius:999px;padding:9px 14px;font-size:.85rem;outline:none}
+        .cm-tools input{min-width:240px}.cm-tools input:focus,.cm-tools select:focus{border-color:var(--accent);box-shadow:var(--glow)}
+        .cm-sum{color:var(--text-muted);font-size:.85rem;margin:6px 0 10px}.cm-sum b{color:var(--accent)}
+        .cm-who{display:flex;align-items:center;gap:12px;min-width:190px}
+        .cm-av{flex:none;width:42px;height:42px;border-radius:50%;display:grid;place-items:center;font-weight:800;color:#fff;background:linear-gradient(135deg,#00c8ff,#ff3d81);box-shadow:0 0 12px rgba(0,200,255,.35)}
+        .cm-av.lg{width:68px;height:68px;font-size:1.6rem}
+        .cm-who b{display:block}.cm-who small{color:var(--text-muted)}
+        .cm-tag{display:inline-block;font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle;letter-spacing:.04em}
+        .cm-tag.vip{background:rgba(245,166,35,.18);color:#ffc15a;border:1px solid rgba(245,166,35,.4)}
+        .cm-tag.guest{background:rgba(136,136,153,.18);color:#aab;border:1px solid rgba(136,136,153,.35)}
+        .cm-tag.reg{background:rgba(0,255,204,.12);color:var(--success);border:1px solid rgba(0,255,204,.3)}
+        .cm-pager{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+        .cm-pager button{background:var(--sidebar-bg);color:#fff;border:1px solid var(--border-strong);border-radius:10px;padding:6px 12px;cursor:pointer}
+        .cm-pager button.on{background:var(--accent);border-color:var(--accent)}
+        .cm-bg{justify-content:flex-end!important;align-items:stretch!important}
+        .cm-drawer{position:relative;width:min(560px,100%);height:100%;overflow-y:auto;padding:26px 24px 30px;background:linear-gradient(180deg,#141a30,#0b0f20);border-left:1px solid var(--border-strong);box-shadow:-20px 0 50px rgba(0,0,0,.6);animation:cmIn .25s ease}
+        @keyframes cmIn{from{transform:translateX(40px);opacity:0}to{transform:none;opacity:1}}
+        .cm-x{position:absolute;top:14px;right:14px;width:34px;height:34px;border-radius:50%;border:1px solid var(--border-strong);background:var(--sidebar-bg);color:#fff;cursor:pointer}
+        .cm-head{display:flex;gap:16px;align-items:center;margin:6px 0 18px;padding-right:36px}
+        .cm-head h3{margin:0 0 4px}.cm-head small{color:var(--text-muted);display:block}
+        .cm-mini{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:16px}
+        .cm-mini div{padding:12px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid var(--border);text-align:center}
+        .cm-mini small{display:block;color:var(--text-muted);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em}.cm-mini b{font-size:1.05rem}
+        .cm-act{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+        .cm-info{margin-bottom:18px;border:1px solid var(--border);border-radius:14px;overflow:hidden}
+        .cm-info div{display:flex;justify-content:space-between;gap:12px;padding:9px 14px;font-size:.86rem;border-bottom:1px solid var(--border)}.cm-info div:last-child{border:0}
+        .cm-info span{color:var(--text-muted)}.cm-info b{font-weight:600;text-align:right;word-break:break-word}
+        .cm-ord{border:1px solid var(--border);border-radius:14px;padding:12px 14px;margin-bottom:10px;background:rgba(255,255,255,.03)}
+        .cm-ord-h{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:6px}
+        .cm-ord ul{margin:6px 0 0 18px;color:var(--text-muted);font-size:.82rem}
+        .cm-note{width:100%;min-height:70px;background:var(--sidebar-bg);border:1px solid var(--border-strong);border-radius:12px;color:#fff;padding:10px;resize:vertical;margin-bottom:8px}
+        .cm-h4{margin:18px 0 10px;color:var(--accent);font-family:'Space Grotesk',sans-serif}
+        @media(max-width:900px){.cm-stats{grid-template-columns:repeat(2,1fr)}.cm-tools input{min-width:0;flex:1 1 100%}}
+
+        /* ===== PLUS: toggle switches ===== */
+        #siteSettings input[type=checkbox],#couponForm input[type=checkbox],.sw-toggle{-webkit-appearance:none;appearance:none;flex:none;width:44px;height:25px;border-radius:999px;background:#2a3050;border:1px solid var(--border-strong);position:relative;cursor:pointer;vertical-align:middle;margin-right:10px;transition:.25s;padding:0}
+        #siteSettings input[type=checkbox]::after,#couponForm input[type=checkbox]::after,.sw-toggle::after{content:"";position:absolute;top:2px;left:2px;width:19px;height:19px;border-radius:50%;background:#aab;transition:.25s}
+        #siteSettings input[type=checkbox]:checked,#couponForm input[type=checkbox]:checked,.sw-toggle:checked{background:linear-gradient(135deg,#00c8ff,#ff3d81);border-color:transparent;box-shadow:0 0 12px rgba(0,200,255,.45)}
+        #siteSettings input[type=checkbox]:checked::after,#couponForm input[type=checkbox]:checked::after,.sw-toggle:checked::after{left:22px;background:#fff}
+        #siteSettings label{display:flex;align-items:center;padding:10px 14px;border:1px solid var(--border);border-radius:14px;background:rgba(255,255,255,.03)}
+        #siteSettings .form-group label{display:block;padding:0;border:0;background:none}
+        /* ===== PLUS: dashboard overview ===== */
+        .dbp-kpis{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin:22px 0 16px}
+        .dbp-kpi{padding:16px;border-radius:18px;background:linear-gradient(160deg,rgba(30,30,44,.75),rgba(18,18,26,.92));border:1px solid rgba(0,200,255,.25)}
+        .dbp-kpi small{display:block;color:var(--text-muted);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+        .dbp-kpi b{display:block;font-family:'Space Grotesk',sans-serif;font-size:1.35rem;margin:4px 0}
+        .dbp-kpi i{font-style:normal;font-size:.76rem;font-weight:700}.dbp-up{color:var(--success)}.dbp-dn{color:var(--danger)}
+        .dbp-grid{display:grid;grid-template-columns:2fr 1fr;gap:14px;margin-bottom:14px}
+        .dbp-grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:14px}
+        .dbp-box{padding:18px;border-radius:18px;background:var(--sidebar-bg);border:1px solid var(--border);min-width:0}
+        .dbp-box h4{margin:0 0 12px;color:var(--text-muted);font-size:.8rem;text-transform:uppercase;letter-spacing:.06em}
+        .dbp-row{display:flex;justify-content:space-between;gap:10px;align-items:center;padding:8px 0;border-bottom:1px solid var(--border);font-size:.85rem}.dbp-row:last-child{border:0}
+        .dbp-row small{color:var(--text-muted);display:block}
+        .dbp-bar{height:6px;border-radius:9px;background:rgba(255,255,255,.08);margin-top:5px;overflow:hidden}.dbp-bar span{display:block;height:100%;background:linear-gradient(90deg,#00c8ff,#ff3d81)}
+        .dbp-box canvas{max-height:230px}
+        @media(max-width:1000px){.dbp-kpis{grid-template-columns:repeat(2,1fr)}.dbp-grid,.dbp-grid3{grid-template-columns:1fr}}
+        /* ===== PLUS: loyalty / whatsapp / abandoned ===== */
+        .cm-tier{display:inline-block;font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:999px;margin-left:6px;vertical-align:middle}
+        .cm-tier.Bronze{background:rgba(205,127,50,.18);color:#e0a060;border:1px solid rgba(205,127,50,.4)}
+        .cm-tier.Silver{background:rgba(190,200,220,.15);color:#d5dcf0;border:1px solid rgba(190,200,220,.4)}
+        .cm-tier.Gold{background:rgba(245,166,35,.18);color:#ffc15a;border:1px solid rgba(245,166,35,.45)}
+        .cm-tier.Platinum{background:rgba(0,200,255,.15);color:#7fe3ff;border:1px solid rgba(0,200,255,.45)}
+        .cm-loy{margin-bottom:16px;padding:14px;border-radius:14px;border:1px solid var(--border);background:rgba(255,255,255,.03)}
+        .cm-loy-top{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:8px}
+        .wa-pop{position:fixed;right:20px;bottom:20px;z-index:3000;max-width:340px;padding:14px 16px;border-radius:16px;background:#141a30;border:1px solid var(--border-strong);box-shadow:0 14px 40px rgba(0,0,0,.6);display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+        .wa-pop a,.wa-pop button{border:0;border-radius:999px;padding:8px 14px;font-weight:700;cursor:pointer;text-decoration:none;font-size:.82rem}
+        .wa-pop a{background:#25d366;color:#04230f}.wa-pop button{background:#2a3050;color:#fff}
+        .ab-sql{background:#0b0f20;border:1px solid var(--border);border-radius:12px;padding:12px;font-family:'IBM Plex Mono',monospace;font-size:.76rem;white-space:pre-wrap;color:#9fe;overflow-x:auto}
 </style>
 </head>
 <body>
@@ -467,6 +545,7 @@
             <div class="nav-section">
                 <div class="nav-title">People & Marketing</div>
                 <button class="nav-btn" onclick="switchTab('customers')">👥 Customers</button>
+                <button class="nav-btn" onclick="switchTab('abandonedCarts')">🛒 Abandoned Carts</button>
                 <button class="nav-btn" onclick="switchTab('coupons')">🏷️ Coupons</button>
                 <button class="nav-btn" onclick="switchTab('offerSettings')">🔥 Offer Banner</button>
                 <button class="nav-btn" onclick="switchTab('homeSections')">🏠 Home Sections</button>
@@ -730,6 +809,8 @@
                             </div>
                         </div>
 
+                        <div id="dbPlus"></div>
+
                         <!-- Chart Section -->
                         <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
                             <div style="background: var(--sidebar-bg); padding: 20px; border-radius: 12px; border: 1px solid var(--border);">
@@ -746,19 +827,53 @@
 
                 <!-- TAB 5: Customers -->
                 <div id="customers" class="section-panel">
+                    <div class="cm-stats">
+                        <div class="cm-stat"><span class="cm-ic">👥</span><div><small>Total customers</small><b id="cmStTotal">0</b></div></div>
+                        <div class="cm-stat"><span class="cm-ic">🛒</span><div><small>With orders</small><b id="cmStBuyers">0</b></div></div>
+                        <div class="cm-stat"><span class="cm-ic">🆕</span><div><small>New (30 days)</small><b id="cmStNew">0</b></div></div>
+                        <div class="cm-stat"><span class="cm-ic">💰</span><div><small>Total revenue (LKR)</small><b id="cmStRev">0</b></div></div>
+                    </div>
                     <div class="card">
-                        <h3>පාරිභෝගික ලැයිස්තුව (Customers)</h3>
-                        <table>
+                        <div class="cm-bar">
+                            <h3>පාරිභෝගික ලැයිස්තුව (Customers)</h3>
+                            <div class="cm-tools">
+                                <input id="cmSearch" type="search" placeholder="🔍 නම / email / phone සොයන්න..." oninput="cmRender(1)">
+                                <select id="cmFilter" onchange="cmRender(1)">
+                                    <option value="all">සියල්ල</option>
+                                    <option value="buyers">Orders ඇති අය</option>
+                                    <option value="none">Orders නැති අය</option>
+                                    <option value="vip">Gold+ (LKR 50,000+)</option>
+                                    <option value="registered">Registered accounts</option>
+                                    <option value="guest">Guest buyers</option>
+                                </select>
+                                <select id="cmSort" onchange="cmRender(1)">
+                                    <option value="recent">අලුත්ම order</option>
+                                    <option value="spent">වැඩිම වියදම</option>
+                                    <option value="orders">වැඩිම orders</option>
+                                    <option value="name">නම (A-Z)</option>
+                                    <option value="joined">අලුත් members</option>
+                                </select>
+                                <button class="btn-primary" onclick="cmExportCSV()">⬇ CSV</button>
+                            </div>
+                        </div>
+                        <div class="cm-sum" id="cmSummary"></div>
+                        <div style="overflow-x:auto">
+                        <table class="cm-table">
                             <thead>
-                                <tr>
-                                    <th>නම</th>
-                                    <th>ඊමේල්</th>
-                                    <th>දුරකථන අංකය</th>
-                                    <th>ක්‍රියාමාර්ග</th>
-                                </tr>
+                                <tr><th>Customer</th><th>Contact</th><th>Orders</th><th>Total spent</th><th>Last order</th><th>ක්‍රියාමාර්ග</th></tr>
                             </thead>
                             <tbody id="customersTableBody"></tbody>
                         </table>
+                        </div>
+                        <div class="cm-pager" id="cmPager"></div>
+                    </div>
+                </div>
+
+                <div id="abandonedCarts" class="section-panel">
+                    <div class="card">
+                        <div class="cm-bar"><h3>🛒 Abandoned Carts</h3><div class="cm-tools"><select id="abDays" onchange="loadAbandoned()"><option value="1">අන්තිම දවස 1</option><option value="3">දවස් 3</option><option value="7" selected>දවස් 7</option><option value="30">දවස් 30</option></select><button class="btn-primary" onclick="loadAbandoned()">↻ Refresh</button></div></div>
+                        <p style="color:var(--text-muted);margin:8px 0 14px;font-size:.85rem">Cart එකට items දාලා order එක complete නොකරපු අය. WhatsApp / Email reminder එකක් යවන්න පුළුවන්.</p>
+                        <div id="abBody">ලෝඩ් වෙමින් පවතී...</div>
                     </div>
                 </div>
 
@@ -801,6 +916,7 @@
                             <div class="form-grid">
                                 <div class="form-group"><label>Banner Title</label><input type="text" id="oTitle" placeholder="🔥 Mega Sale — ends soon!"></div>
                                 <div class="form-group"><label>Discount (%)</label><input type="number" id="oPercent" min="1" max="99" step="0.5" required placeholder="e.g. 15"></div>
+                                <div class="form-group"><label>Start Date &amp; Time (optional — schedule ahead)</label><input type="datetime-local" id="oStart"></div>
                                 <div class="form-group"><label>Expiry Date &amp; Time</label><input type="datetime-local" id="oExpiry" required></div>
                                 <div class="form-group"><label>Status</label><select id="oEnabled"><option value="1">Active</option><option value="0">Off</option></select></div>
                             </div>
@@ -1100,17 +1216,14 @@
         </div>
     </div>
 
-    <!-- Customer History Modal -->
-    <div id="customerModal" class="modal-bg">
-        <div class="modal-card">
-            <h3 id="custModalTitle">පාරිභෝගික ඇණවුම් ඉතිහාසය</h3><br>
+    <!-- Customer Detail Drawer -->
+    <div id="customerModal" class="modal-bg cm-bg" onclick="if(event.target===this)closeCustomerModal()">
+        <div class="cm-drawer">
+            <button class="cm-x" onclick="closeCustomerModal()" aria-label="Close">✕</button>
             <div id="custOrdersContent">ලෝඩ් වෙමින් පවතී...</div>
-            <br>
-            <button onclick="closeCustomerModal()" class="btn-primary" style="width: 100%;">වසන්න</button>
         </div>
     </div>
 
-    <!-- Supabase JavaScript Logic -->
     <script type="module">
         import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm';
 
@@ -1411,7 +1524,8 @@
             if(tabId === 'adsManager') loadAds();
             if(tabId === 'siteSettings') loadSiteSettings();
             if(tabId === 'reviewsManager') loadReviews();
-            if(tabId === 'dashboardStats') { loadDashboardStats(); renderCharts(); }
+            if(tabId === 'dashboardStats') { loadDashboardStats(); renderCharts(); if (window.renderDbPlus) renderDbPlus(); }
+            if(tabId === 'abandonedCarts' && window.loadAbandoned) loadAbandoned();
         }
 
         // Check Session on Load
@@ -2106,6 +2220,7 @@
                             <button class="btn-success" onclick="editOrderNote('${item.id}')">📝 Note</button>
                             <button class="btn-success" onclick="editTracking('${item.id}')">🚚 Tracking</button>
                             <button class="btn-success" onclick="printInvoice('${item.id}')">🧾 Invoice</button>
+                            <button class="btn-success" onclick="waOrder('${item.id}')">💬 WhatsApp</button>
                             <button class="btn-success" onclick="printLabel('${item.id}')">📦 Label</button>
                             <button class="btn-danger" onclick="deleteOrder('${item.id}')">🗑 Delete</button>
                         </td>
@@ -2405,62 +2520,335 @@
             matchPreset(); draw();
         };
 
-        // 3. Customers with Order History & Delete
+        // 3. Customers manager: registered accounts + guest buyers merged with orders
+        let cmRows = [], cmView = [], cmPage = 1; const CM_PER = 15;
+        const cmKey = v => String(v || '').trim().toLowerCase();
+        const cmDigits = v => String(v || '').replace(/\D/g, '').replace(/^94/, '0');
+        function cmTime(o) { const t = orderTime(o); return t || 0; }
+        function cmInitial(n) { return (String(n || '?').trim()[0] || '?').toUpperCase(); }
+        function cmJoined(c) { const t = Date.parse(c.created_at || c.joined_at || ''); return isNaN(t) ? 0 : t; }
+        function cmLKR(n) { return 'LKR ' + Math.round(n).toLocaleString(); }
+
         async function loadCustomers() {
             const tbody = document.getElementById('customersTableBody');
-            tbody.innerHTML = '<tr><td colspan="4">ලෝඩ් වෙමින් පවතී...</td></tr>';
-            const { data, error } = await fetchAllRows('customers');
-            if (error) { tbody.innerHTML = `<tr><td colspan="4">දෝෂයකි: ${escapeHTML(error.message)}</td></tr>`; return; }
-            allCustomersData = data || [];
-            tbody.innerHTML = allCustomersData.length === 0 ? '<tr><td colspan="4">පාරිභෝගිකයින් නැත.</td></tr>' : '';
-
-            allCustomersData.forEach(item => {
-                tbody.innerHTML += `
-                    <tr>
-                        <td>${escapeHTML(item.name)}</td>
-                        <td>${escapeHTML(item.email)}</td>
-                        <td>${escapeHTML(item.phone) || '-'}</td>
-                        <td>
-                            <button class="btn-primary" onclick="viewCustomerHistory('${item.id}')">🔍 View History</button>
-                            <button class="btn-danger" onclick="deleteCustomer('${item.id}')">🗑️ Delete</button>
-                        </td>
-                    </tr>`;
-            });
+            tbody.innerHTML = '<tr><td colspan="6">ලෝඩ් වෙමින් පවතී...</td></tr>';
+            const [cRes, oRes] = await Promise.all([fetchAllRows('customers'), allOrdersData.length ? Promise.resolve({ data: allOrdersData }) : fetchAllRows('orders')]);
+            if (cRes.error) { tbody.innerHTML = `<tr><td colspan="6">දෝෂයකි: ${escapeHTML(cRes.error.message)}</td></tr>`; return; }
+            allCustomersData = cRes.data || [];
+            if (oRes && oRes.data) allOrdersData = oRes.data;
+            cmBuild();
+            cmRender(1);
         }
+
+        // merge customers table + orders (guests who ordered without an account are included)
+        function cmBuild() {
+            const map = new Map(), byPhone = new Map();
+            const add = (key, base) => { if (!map.has(key)) map.set(key, Object.assign({ key, orders: [], total: 0, last: 0, registered: false }, base)); return map.get(key); };
+            allCustomersData.forEach(c => {
+                const em = cmKey(c.email), ph = cmDigits(c.phone);
+                const k = em || (ph ? 'p:' + ph : 'id:' + c.id);
+                const r = add(k, { id: c.id, name: c.name, email: c.email, phone: c.phone, joined: cmJoined(c), raw: c, registered: true });
+                if (ph) byPhone.set(ph, k);
+            });
+            allOrdersData.forEach(o => {
+                const em = cmKey(o.customer_email), ph = cmDigits(o.customer_phone);
+                let k = (em && map.has(em)) ? em : (ph && byPhone.get(ph)) || em || (ph ? 'p:' + ph : 'n:' + cmKey(o.customer_name || 'unknown'));
+                const r = add(k, { name: o.customer_name, email: o.customer_email, phone: o.customer_phone, joined: 0 });
+                if (!r.name && o.customer_name) r.name = o.customer_name;
+                if (!r.phone && o.customer_phone) r.phone = o.customer_phone;
+                if (!r.email && o.customer_email) r.email = o.customer_email;
+                r.orders.push(o);
+                if (normStatus(o.status) !== 'Cancelled') r.total += orderTotal(o);
+                r.last = Math.max(r.last, cmTime(o));
+            });
+            cmRows = [...map.values()];
+            cmRows.forEach(r => { r.orders.sort((a, b) => cmTime(b) - cmTime(a)); if (!r.name) r.name = r.email || r.phone || 'Unknown'; });
+        }
+
+        window.cmRender = function(page) {
+            if (page) cmPage = page;
+            const q = cmKey(document.getElementById('cmSearch').value), f = document.getElementById('cmFilter').value, sort = document.getElementById('cmSort').value;
+            const qd = cmDigits(q);
+            let rows = cmRows.filter(r => {
+                if (q) {
+                    const hay = [r.name, r.email, r.phone].map(cmKey).join(' ');
+                    if (!hay.includes(q) && !(qd.length > 2 && cmDigits(r.phone).includes(qd))) return false;
+                }
+                if (f === 'buyers') return r.orders.length > 0;
+                if (f === 'none') return r.orders.length === 0;
+                if (f === 'vip') return r.total >= 50000;
+                if (f === 'registered') return r.registered;
+                if (f === 'guest') return !r.registered;
+                return true;
+            });
+            const cmp = {
+                recent: (a, b) => (b.last - a.last) || (b.joined - a.joined),
+                spent: (a, b) => b.total - a.total,
+                orders: (a, b) => b.orders.length - a.orders.length,
+                name: (a, b) => String(a.name).localeCompare(String(b.name)),
+                joined: (a, b) => b.joined - a.joined
+            }[sort];
+            rows.sort(cmp);
+            cmView = rows;
+
+            // stats (over everyone, not just the filtered view)
+            const month = Date.now() - 30 * 864e5;
+            document.getElementById('cmStTotal').textContent = cmRows.length.toLocaleString();
+            document.getElementById('cmStBuyers').textContent = cmRows.filter(r => r.orders.length).length.toLocaleString();
+            document.getElementById('cmStNew').textContent = cmRows.filter(r => r.joined > month || (!r.joined && r.orders.length && r.orders[r.orders.length - 1] && cmTime(r.orders[r.orders.length - 1]) > month && r.orders.length === 1)).length.toLocaleString();
+            document.getElementById('cmStRev').textContent = Math.round(cmRows.reduce((t, r) => t + r.total, 0)).toLocaleString();
+            document.getElementById('cmSummary').innerHTML = `<b>${rows.length}</b> customers පෙන්වනවා` + (rows.length !== cmRows.length ? ` (මුළු ${cmRows.length}න්)` : '');
+
+            const tbody = document.getElementById('customersTableBody');
+            const pages = Math.max(1, Math.ceil(rows.length / CM_PER)); if (cmPage > pages) cmPage = pages;
+            const slice = rows.slice((cmPage - 1) * CM_PER, cmPage * CM_PER);
+            tbody.innerHTML = slice.length ? '' : '<tr><td colspan="6">පාරිභෝගිකයින් නැත.</td></tr>';
+            slice.forEach(r => {
+                const i = cmRows.indexOf(r);
+                const when = r.last ? new Date(r.last) : null;
+                tbody.innerHTML += `<tr>
+                    <td><div class="cm-who"><span class="cm-av">${escapeHTML(cmInitial(r.name))}</span><div><b>${escapeHTML(r.name)}${r.total >= 1000 ? `<span class="cm-tier ${cmTier(r.total).name}">${cmTier(r.total).name}</span>` : ''}${r.registered ? '' : '<span class="cm-tag guest">GUEST</span>'}</b><small>${r.registered ? 'Member' : 'Order only'} · ${cmPoints(r.total).toLocaleString()} pts</small></div></div></td>
+                    <td>${escapeHTML(r.email) || '-'}<br><small style="color:var(--text-muted)">${escapeHTML(r.phone) || ''}</small></td>
+                    <td><b>${r.orders.length}</b></td>
+                    <td>${cmLKR(r.total)}</td>
+                    <td>${when ? escapeHTML(when.toLocaleDateString()) + '<br><small style="color:var(--text-muted)">' + escapeHTML(orderAgo(r.last)) + '</small>' : '-'}</td>
+                    <td><button class="btn-primary" onclick="cmOpen(${i})">🔍 View</button>${r.registered ? `<button class="btn-danger" onclick="deleteCustomer('${escapeHTML(String(r.id))}')">🗑️</button>` : ''}</td>
+                </tr>`;
+            });
+            const pg = document.getElementById('cmPager'); pg.innerHTML = '';
+            if (pages > 1) for (let p = 1; p <= pages; p++) {
+                if (pages > 9 && p !== 1 && p !== pages && Math.abs(p - cmPage) > 2) { if (!pg.lastChild || pg.lastChild.textContent !== '…') pg.insertAdjacentHTML('beforeend', '<button disabled>…</button>'); continue; }
+                pg.insertAdjacentHTML('beforeend', `<button class="${p === cmPage ? 'on' : ''}" onclick="cmRender(${p})">${p}</button>`);
+            }
+        };
+
+        window.cmOpen = function(i) {
+            const r = cmRows[i]; if (!r) return;
+            const box = document.getElementById('custOrdersContent');
+            const paid = r.orders.filter(o => normStatus(o.status) !== 'Cancelled');
+            const avg = paid.length ? r.total / paid.length : 0;
+            const ph = cmDigits(r.phone), wa = ph ? '94' + ph.replace(/^0/, '') : '';
+            const raw = r.raw || {};
+            const extra = ['last_login', 'login_count', 'address', 'city'].filter(k => raw[k] != null && raw[k] !== '').map(k => `<div><span>${escapeHTML(k.replace('_', ' '))}</span><b>${escapeHTML(k === 'last_login' ? new Date(raw[k]).toLocaleString() : raw[k])}</b></div>`).join('');
+            const lastAddr = r.orders.map(o => oAddr(o)).find(Boolean);
+            const orders = r.orders.map(o => {
+                const st = normStatus(o.status);
+                const cls = ({ Delivered: 'badge-delivered', Shipping: 'badge-shipping', Confirmed: 'badge-confirmed', Cancelled: 'badge-cancelled' })[st] || 'badge-pending';
+                const t = cmTime(o);
+                const items = oItems(o).map(it => `<li>${escapeHTML(it.name || it.title || 'Item')} × ${escapeHTML(it.qty || it.quantity || 1)}</li>`).join('');
+                return `<div class="cm-ord"><div class="cm-ord-h"><b>#${escapeHTML(String(o.order_number || o.id).slice(0, 12))}</b><span class="badge ${cls}">${escapeHTML(st)}</span></div>
+                    <div style="display:flex;justify-content:space-between;font-size:.85rem"><span style="color:var(--text-muted)">${t ? escapeHTML(new Date(t).toLocaleString()) : '-'}</span><b>${cmLKR(orderTotal(o))}</b></div>${items ? '<ul>' + items + '</ul>' : ''}</div>`;
+            }).join('') || '<p style="color:var(--text-muted)">මෙම පාරිභෝගිකයාගෙන් තවම ඇණවුම් ලැබී නැත.</p>';
+            box.innerHTML = `
+                <div class="cm-head"><span class="cm-av lg">${escapeHTML(cmInitial(r.name))}</span><div><h3>${escapeHTML(r.name)}<span class="cm-tier ${cmTier(r.total).name}">${cmTier(r.total).name}</span></h3><small>${escapeHTML(r.email) || ''}</small><small>${escapeHTML(r.phone) || ''}</small></div></div>
+                <div class="cm-mini"><div><small>Orders</small><b>${r.orders.length}</b></div><div><small>Total spent</small><b>${cmLKR(r.total)}</b></div><div><small>Avg order</small><b>${cmLKR(avg)}</b></div></div>
+                <div class="cm-act">
+                    ${r.email ? `<a class="btn-primary" style="text-decoration:none" href="mailto:${encodeURIComponent(r.email)}">✉ Email</a>` : ''}
+                    ${wa ? `<a class="btn-primary" style="text-decoration:none" target="_blank" rel="noopener" href="https://wa.me/${wa}">💬 WhatsApp</a>` : ''}
+                    ${ph ? `<a class="btn-primary" style="text-decoration:none" href="tel:${escapeHTML(r.phone)}">📞 Call</a>` : ''}
+                    <button class="btn-primary" onclick="cmViewInOrders(${i})">📦 Orders tab</button>
+                </div>
+                <div class="cm-info">
+                    <div><span>Account</span><b>${r.registered ? 'Registered member' : 'Guest (no account)'}</b></div>
+                    ${r.joined ? `<div><span>Joined</span><b>${escapeHTML(new Date(r.joined).toLocaleDateString())}</b></div>` : ''}
+                    ${lastAddr ? `<div><span>Last delivery address</span><b>${escapeHTML(lastAddr)}</b></div>` : ''}
+                    ${extra}
+                </div>
+                ${cmLoyaltyHTML(r, i)}
+                <h4 class="cm-h4">📝 Admin note</h4>
+                <textarea class="cm-note" id="cmNote" placeholder="මේ customer ගැන note එකක්... (මේ browser එකේ විතරක් save වෙනවා)">${escapeHTML(localStorage.getItem('sp_cnote_' + r.key) || '')}</textarea>
+                <button class="btn-primary" onclick="localStorage.setItem('sp_cnote_${escapeHTML(r.key).replace(/'/g, '')}', document.getElementById('cmNote').value); this.textContent='✓ Saved'">Save note</button>
+                <h4 class="cm-h4">📦 ඇණවුම් ඉතිහාසය (${r.orders.length})</h4>${orders}`;
+            document.getElementById('customerModal').style.display = 'flex';
+        };
+
+        window.cmViewInOrders = function(i) {
+            const r = cmRows[i]; if (!r) return;
+            closeCustomerModal();
+            switchTab('orders');
+            setTimeout(() => viewCustomerOrders(cmKey(r.email) || cmKey(r.phone) || cmKey(r.name)), 60);
+        };
+
+        window.cmExportCSV = function() {
+            const q = v => '"' + String(v == null ? '' : v).replace(/"/g, '""') + '"';
+            const lines = [['Name', 'Email', 'Phone', 'Type', 'Orders', 'Total spent (LKR)', 'Last order'].map(q).join(',')];
+            cmView.forEach(r => lines.push([r.name, r.email, r.phone, r.registered ? 'Member' : 'Guest', r.orders.length, Math.round(r.total), r.last ? new Date(r.last).toISOString().slice(0, 10) : ''].map(q).join(',')));
+            const blob = new Blob(['\ufeff' + lines.join('\n')], { type: 'text/csv;charset=utf-8' });
+            const a = document.createElement('a'); a.href = URL.createObjectURL(blob); a.download = 'smartparts-customers-' + new Date().toISOString().slice(0, 10) + '.csv'; a.click();
+            setTimeout(() => URL.revokeObjectURL(a.href), 2000);
+        };
 
         window.deleteCustomer = async function(id) {
-            if(!confirm('මෙම පාරිභෝගිකයා ඉවත් කිරීමට අවශ්‍ය බව සැබෑද?')) return;
+            if(!confirm('මෙම පාරිභෝගිකයා ඉවත් කිරීමට අවශ්‍ය බව සැබෑද? (Orders මැකෙන්නේ නැහැ)')) return;
             const { error } = await supabase.from('customers').delete().eq('id', id);
             if(error) alert('දෝෂයකි: ' + error.message);
-            else { alert('පාරිභෝගිකයා ඉවත් කරන ලදී!'); loadCustomers(); loadDashboardStats(); }
-        }
-
-        window.viewCustomerHistory = async function(id) {
-            const cust = allCustomersData.find(c => String(c.id) === String(id));
-            if (!cust) { alert('පාරිභෝගිකයා හමු නොවීය.'); return; }
-            const { email, name } = cust;
-            document.getElementById('custModalTitle').innerText = `${name} (${email}) - ඇණවුම් ඉතිහාසය`;
-            document.getElementById('customerModal').style.display = 'flex';
-            const contentDiv = document.getElementById('custOrdersContent');
-            contentDiv.innerHTML = 'සොයමින් පවතී...';
-
-            const { data, error } = await supabase.from('orders').select('*').eq('customer_email', email);
-            if(error || !data || data.length === 0) {
-                contentDiv.innerHTML = '<p style="color:var(--text-muted)">මෙම පාරිභෝගිකයාගෙන් තවම ඇණවුම් ලැබී නැත.</p>';
-                return;
-            }
-
-            let html = '<table style="width:100%"><tr><th>ID</th><th>මුදල (LKR)</th><th>තත්ත්වය</th></tr>';
-            data.forEach(o => {
-                html += `<tr><td>${escapeHTML(String(o.id).slice(0,8))}...</td><td>${orderTotal(o).toLocaleString()}</td><td>${escapeHTML(o.status)}</td></tr>`;
-            });
-            html += '</table>';
-            contentDiv.innerHTML = html;
-        }
-
+            else { loadCustomers(); try { loadDashboardStats(); } catch (e) {} }
+        };
+        window.viewCustomerHistory = function(id) { const i = cmRows.findIndex(r => String(r.id) === String(id)); if (i >= 0) cmOpen(i); };
         window.closeCustomerModal = function() {
             document.getElementById('customerModal').style.display = 'none';
+        };
+
+        // ===== PLUS: loyalty tiers, WhatsApp, dashboard overview, abandoned carts =====
+        const CM_TIERS = [{ name: 'Bronze', min: 0, off: 0 }, { name: 'Silver', min: 10000, off: 3 }, { name: 'Gold', min: 50000, off: 5 }, { name: 'Platinum', min: 150000, off: 10 }];
+        function cmTier(total) { let t = CM_TIERS[0]; CM_TIERS.forEach(x => { if (total >= x.min) t = x; }); return t; }
+        function cmPoints(total) { return Math.floor(total / 100); }
+        function cmRefCode(email) { const str = cmKey(email); if (!str) return ''; let h = 0; for (let i = 0; i < str.length; i++) h = (h * 31 + str.charCodeAt(i)) >>> 0; return 'SP-' + h.toString(36).toUpperCase().padStart(5, '0').slice(-5); }
+        function cmLoyaltyHTML(r, i) {
+            const t = cmTier(r.total), next = CM_TIERS[CM_TIERS.indexOf(t) + 1];
+            const pct = next ? Math.min(100, Math.round((r.total - t.min) / (next.min - t.min) * 100)) : 100;
+            const ref = cmRefCode(r.email);
+            return `<h4 class="cm-h4">🎁 Loyalty &amp; Rewards</h4>
+                <div class="cm-loy">
+                    <div class="cm-loy-top"><div><span class="cm-tier ${t.name}" style="margin:0">${t.name}</span> <b style="margin-left:6px">${cmPoints(r.total).toLocaleString()} points</b></div><small style="color:var(--text-muted)">LKR 100 = 1 point</small></div>
+                    <div class="dbp-bar"><span style="width:${pct}%"></span></div>
+                    <small style="color:var(--text-muted);display:block;margin-top:6px">${next ? `${next.name} වෙන්න තව ${cmLKR(next.min - r.total)} ක් ඕන` : 'ඉහළම tier එකේ ඉන්නවා 🎉'}</small>
+                    ${ref ? `<div class="cm-info" style="margin:12px 0 0"><div><span>Referral code</span><b>${ref}</b></div></div>` : ''}
+                    ${t.off ? `<button class="btn-primary" style="margin-top:12px" onclick="cmMakeReward(${i})">🎟 ${t.off}% reward coupon හදන්න</button>` : ''}
+                </div>`;
         }
+        window.cmMakeReward = async function(i) {
+            const r = cmRows[i]; if (!r) return; const t = cmTier(r.total); if (!t.off) return;
+            const code = ('VIP' + String(r.name).replace(/[^A-Za-z0-9]/g, '').slice(0, 4).toUpperCase() + Math.floor(100 + Math.random() * 900));
+            if (!confirm(`${code} (${t.off}% off) coupon එක හදමුද?`)) return;
+            const { error } = await supabase.from('coupons').insert([{ code, percent: t.off, active: true }]);
+            if (error) { alert('දෝෂයකි: ' + error.message); return; }
+            const wa = cmDigits(r.phone);
+            const msg = `Hi ${r.name}! 🎁 SmartParts ${t.name} member කෙනෙක් විදියට ඔයාට ${t.off}% discount coupon එකක්: ${code}. Checkout එකේදී use කරන්න. Thank you!`;
+            if (wa && confirm('Coupon එක හැදුවා ✅ WhatsApp එකෙන් customer ට යවමුද?')) window.open('https://wa.me/94' + wa.replace(/^0/, '') + '?text=' + encodeURIComponent(msg), '_blank');
+            try { loadCoupons(); } catch (e) {}
+        };
+
+        const WA_TPL = {
+            Pending: 'Hi {name}! 🙏 SmartParts වෙත ඔබගේ order #{order} (LKR {total}) ලැබුණා. අපි confirm කරලා ඉක්මනින් දැනුම් දෙනවා.',
+            Confirmed: 'Hi {name}! ✅ ඔබගේ order #{order} confirm කළා. LKR {total}. Packing කරලා ඉක්මනින් යවනවා.',
+            Shipping: 'Hi {name}! 🚚 ඔබගේ order #{order} යැවුවා.{tracking} ඉක්මනින් ලැබෙයි.',
+            Delivered: 'Hi {name}! 🎉 ඔබගේ order #{order} deliver වුණා. Thank you for shopping with SmartParts! කරුණාකර product එක ගැන review එකක් දාන්න 🙏',
+            Cancelled: 'Hi {name}, ඔබගේ order #{order} cancel කළා. ප්‍රශ්නයක් තියෙනවා නම් අපිට message කරන්න.'
+        };
+        function waLink(o, status) {
+            const ph = cmDigits(o.customer_phone); if (!ph) return '';
+            const st = normStatus(status || o.status);
+            const tn = o.tracking_number ? ` Tracking: ${o.tracking_number}.` : '';
+            const msg = (WA_TPL[st] || WA_TPL.Pending).replace('{name}', o.customer_name || 'Customer').replace('{order}', o.order_number || String(o.id).slice(0, 8)).replace('{total}', orderTotal(o).toLocaleString()).replace('{tracking}', tn);
+            return 'https://wa.me/94' + ph.replace(/^0/, '') + '?text=' + encodeURIComponent(msg);
+        }
+        window.waOrder = function(id) {
+            const o = allOrdersData.find(x => String(x.id) === String(id)); if (!o) return;
+            const l = waLink(o); if (!l) { alert('මේ order එකට phone number එකක් නැහැ.'); return; }
+            window.open(l, '_blank');
+        };
+        function waOffer(o, status) {
+            const l = waLink(o, status); if (!l) return;
+            document.querySelectorAll('.wa-pop').forEach(e => e.remove());
+            const d = document.createElement('div'); d.className = 'wa-pop';
+            d.innerHTML = `<span style="flex:1 1 100%;font-size:.85rem">💬 <b>${escapeHTML(o.customer_name || 'Customer')}</b> ට "${escapeHTML(normStatus(status))}" update එක WhatsApp කරමුද?</span><a href="${l}" target="_blank" rel="noopener">Send</a><button type="button">Later</button>`;
+            d.querySelector('a').onclick = () => setTimeout(() => d.remove(), 200); d.querySelector('button').onclick = () => d.remove();
+            document.body.appendChild(d); setTimeout(() => d.remove(), 20000);
+        }
+        (function () {
+            const _uos = window.updateOrderStatus;
+            window.updateOrderStatus = async function(id, status, skipMail) {
+                await _uos(id, status, skipMail);
+                if (skipMail) return;
+                try {
+                    const { data } = await supabase.from('orders').select('*').eq('id', id).maybeSingle();
+                    if (data && normStatus(data.status) === normStatus(status)) waOffer(data, status);
+                } catch (e) {}
+            };
+        })();
+
+        // ---- dashboard overview ----
+        const dbp = { charts: {} };
+        function dbpMk(id, cfg) { const el = document.getElementById(id); if (!el || !window.Chart) return; if (dbp.charts[id]) dbp.charts[id].destroy(); dbp.charts[id] = new Chart(el, cfg); }
+        function dbpDelta(cur, prev) { if (!prev) return cur ? '<i class="dbp-up">new</i>' : '<i style="color:var(--text-muted)">–</i>'; const d = Math.round((cur - prev) / prev * 100); return `<i class="${d >= 0 ? 'dbp-up' : 'dbp-dn'}">${d >= 0 ? '▲' : '▼'} ${Math.abs(d)}% vs previous</i>`; }
+        window.renderDbPlus = async function() {
+            const box = document.getElementById('dbPlus'); if (!box) return;
+            const [oR, cR, pR] = await Promise.all([fetchAllRows('orders'), fetchAllRows('customers'), fetchAllRows('products')]);
+            const orders = (oR.data || []), custs = (cR.data || []), prods = (pR.data || []);
+            if (oR.data) allOrdersData = oR.data;
+            const ok = orders.filter(o => normStatus(o.status) !== 'Cancelled');
+            const DAY = 864e5, now = Date.now(), d0 = new Date(); d0.setHours(0, 0, 0, 0); const today0 = d0.getTime();
+            const sumIn = (a, b) => ok.reduce((t, o) => { const x = cmTime(o); return (x >= a && x < b) ? t + orderTotal(o) : t; }, 0);
+            const cntIn = (a, b) => ok.filter(o => { const x = cmTime(o); return x >= a && x < b; }).length;
+            const tdy = sumIn(today0, now + 1), ytd = sumIn(today0 - DAY, today0);
+            const w = sumIn(today0 - 6 * DAY, now + 1), wp = sumIn(today0 - 13 * DAY, today0 - 6 * DAY);
+            const m = sumIn(today0 - 29 * DAY, now + 1), mp = sumIn(today0 - 59 * DAY, today0 - 29 * DAY);
+            const aov = ok.length ? ok.reduce((t, o) => t + orderTotal(o), 0) / ok.length : 0;
+            const pend = orders.filter(o => normStatus(o.status) === 'Pending').length;
+            // 14-day series
+            const labels = [], rev = [], cnt = [];
+            for (let i = 13; i >= 0; i--) { const a = today0 - i * DAY; labels.push(new Date(a).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })); rev.push(Math.round(sumIn(a, a + DAY))); cnt.push(cntIn(a, a + DAY)); }
+            // top products
+            const tp = {}; ok.forEach(o => oItems(o).forEach(it => { const n = it.name || it.title || 'Item', q = Number(it.qty || it.quantity || 1), pr = Number(it.price || 0); const e = tp[n] || (tp[n] = { n, q: 0, rev: 0 }); e.q += q; e.rev += q * pr; }));
+            const top = Object.values(tp).sort((a, b) => b.q - a.q).slice(0, 6), topMax = top[0] ? top[0].q : 1;
+            // low stock
+            const low = prods.filter(p => p.stock != null && Number(p.stock) < 5).sort((a, b) => a.stock - b.stock).slice(0, 6);
+            // customer growth (last 6 months)
+            const gl = [], gv = []; const nd = new Date(); for (let i = 5; i >= 0; i--) { const a = new Date(nd.getFullYear(), nd.getMonth() - i, 1), b = new Date(nd.getFullYear(), nd.getMonth() - i + 1, 1); gl.push(a.toLocaleDateString(undefined, { month: 'short' })); gv.push(custs.filter(c => { const t = cmJoined(c); return t >= a && t < b; }).length); }
+            const recent = [...orders].sort((a, b) => cmTime(b) - cmTime(a)).slice(0, 6);
+            const stCls = st => ({ Delivered: 'badge-delivered', Shipping: 'badge-shipping', Confirmed: 'badge-confirmed', Cancelled: 'badge-cancelled' })[st] || 'badge-pending';
+            box.innerHTML = `
+                <div class="dbp-kpis">
+                    <div class="dbp-kpi"><small>Today</small><b>${cmLKR(tdy)}</b>${dbpDelta(tdy, ytd)}</div>
+                    <div class="dbp-kpi"><small>Last 7 days</small><b>${cmLKR(w)}</b>${dbpDelta(w, wp)}</div>
+                    <div class="dbp-kpi"><small>Last 30 days</small><b>${cmLKR(m)}</b>${dbpDelta(m, mp)}</div>
+                    <div class="dbp-kpi"><small>Avg order value</small><b>${cmLKR(aov)}</b><i style="color:var(--text-muted)">${ok.length} orders</i></div>
+                    <div class="dbp-kpi"><small>Pending orders</small><b>${pend}</b><i class="${pend ? 'dbp-dn' : 'dbp-up'}">${pend ? 'Action needed' : 'All clear'}</i></div>
+                </div>
+                <div class="dbp-grid">
+                    <div class="dbp-box"><h4>Revenue — last 14 days</h4><canvas id="dbpRev"></canvas></div>
+                    <div class="dbp-box"><h4>🏆 Top products</h4>${top.length ? top.map(t => `<div class="dbp-row"><div style="flex:1;min-width:0"><span style="display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHTML(t.n)}</span><div class="dbp-bar"><span style="width:${Math.round(t.q / topMax * 100)}%"></span></div></div><b>${t.q}</b></div>`).join('') : '<small style="color:var(--text-muted)">තවම data නැහැ.</small>'}</div>
+                </div>
+                <div class="dbp-grid3">
+                    <div class="dbp-box"><h4>🕒 Recent orders</h4>${recent.map(o => `<div class="dbp-row"><div><b>${escapeHTML(o.customer_name || '-')}</b><small>${escapeHTML(orderAgo(cmTime(o)))}</small></div><div style="text-align:right">${cmLKR(orderTotal(o))}<br><span class="badge ${stCls(normStatus(o.status))}" style="font-size:.65rem">${escapeHTML(normStatus(o.status))}</span></div></div>`).join('') || '<small style="color:var(--text-muted)">Orders නැහැ.</small>'}</div>
+                    <div class="dbp-box"><h4>⚠️ Low stock</h4>${low.map(p => `<div class="dbp-row"><span style="overflow:hidden;text-overflow:ellipsis;white-space:nowrap">${escapeHTML(p.name)}</span><span class="badge badge-lowstock">${escapeHTML(p.stock)}</span></div>`).join('') || '<small style="color:var(--success)">සියල්ල හොඳයි ✅</small>'}</div>
+                    <div class="dbp-box"><h4>👥 New customers (6 months)</h4><canvas id="dbpGrow"></canvas></div>
+                </div>`;
+            dbpMk('dbpRev', { type: 'line', data: { labels, datasets: [{ label: 'Revenue (LKR)', data: rev, borderColor: '#00c8ff', backgroundColor: 'rgba(0,200,255,.15)', fill: true, tension: .35, pointRadius: 3 }, { label: 'Orders', data: cnt, borderColor: '#ff3d81', yAxisID: 'y2', tension: .35, pointRadius: 2, borderDash: [4, 4] }] }, options: { responsive: true, plugins: { legend: { labels: { color: '#aab' } } }, scales: { x: { ticks: { color: '#889' }, grid: { display: false } }, y: { ticks: { color: '#889' }, grid: { color: 'rgba(255,255,255,.06)' } }, y2: { position: 'right', ticks: { color: '#ff7aa8', precision: 0 }, grid: { display: false } } } } });
+            dbpMk('dbpGrow', { type: 'bar', data: { labels: gl, datasets: [{ data: gv, backgroundColor: '#00c8ff', borderRadius: 6 }] }, options: { plugins: { legend: { display: false } }, scales: { x: { ticks: { color: '#889' }, grid: { display: false } }, y: { beginAtZero: true, ticks: { color: '#889', precision: 0 }, grid: { color: 'rgba(255,255,255,.06)' } } } } });
+        };
+
+        // ---- abandoned carts ----
+        const AB_TABLES = ['cart_snapshots', 'abandoned_carts', 'carts', 'saved_carts'];
+        window.loadAbandoned = async function() {
+            const body = document.getElementById('abBody'); body.innerHTML = 'ලෝඩ් වෙමින් පවතී...';
+            const days = Number(document.getElementById('abDays').value) || 7;
+            let rows = null, used = '';
+            for (const t of AB_TABLES) {
+                const { data, error } = await supabase.from(t).select('*').limit(1000);
+                if (!error) { rows = data || []; used = t; break; }
+            }
+            if (rows === null) {
+                body.innerHTML = `<p style="margin-bottom:10px">Cart snapshots table එක හොයාගන්න බැරි වුණා. Supabase → SQL Editor එකේ මේක run කරලා බලන්න (ඔයාගේ <code>save_cart_snapshot</code> RPC එක වෙන table එකකට ලියනවා නම් table නම කියන්න, මම ඒක connect කරන්නම්):</p><div class="ab-sql">create table if not exists public.cart_snapshots (
+  customer_key text primary key,
+  cart jsonb,
+  updated_at timestamptz default now()
+);
+alter table public.cart_snapshots enable row level security;
+create policy "admin read carts" on public.cart_snapshots for select using (auth.jwt() ->> 'email' = 'YOUR_ADMIN_EMAIL');</div>`;
+                return;
+            }
+            const since = Date.now() - days * 864e5;
+            if (!allOrdersData.length) { const r = await fetchAllRows('orders'); allOrdersData = r.data || []; }
+            const ordered = new Map(); allOrdersData.forEach(o => { const t = cmTime(o); [cmKey(o.customer_email), cmDigits(o.customer_phone)].forEach(k => { if (k) ordered.set(k, Math.max(ordered.get(k) || 0, t)); }); });
+            const list = rows.map(r => {
+                let cart = r.cart || r.items || r.cart_data || []; if (typeof cart === 'string') { try { cart = JSON.parse(cart); } catch (e) { cart = []; } }
+                if (!Array.isArray(cart)) cart = Object.values(cart || {});
+                const key = String(r.customer_key || r.email || r.user_id || '');
+                const ts = Date.parse(r.updated_at || r.created_at || '') || 0;
+                const total = cart.reduce((t, it) => t + Number(it.price || (it.product && it.product.price) || 0) * Number(it.qty || it.quantity || 1), 0);
+                const name = it => it.name || (it.product && it.product.name) || 'Item';
+                return { key, ts, cart, total, label: cart.map(it => name(it) + ' ×' + (it.qty || it.quantity || 1)).join(', '), bought: (ordered.get(cmKey(key)) || 0) > ts };
+            }).filter(x => x.cart.length && x.ts >= since && !x.bought).sort((a, b) => b.ts - a.ts);
+            const totalVal = list.reduce((t, x) => t + x.total, 0);
+            body.innerHTML = `<div class="cm-sum"><b>${list.length}</b> abandoned carts · potential <b>${cmLKR(totalVal)}</b> <small>(table: ${escapeHTML(used)})</small></div>` + (list.length ? `<div style="overflow-x:auto"><table class="cm-table"><thead><tr><th>Customer</th><th>Items</th><th>Cart value</th><th>Last active</th><th></th></tr></thead><tbody>${list.map(x => {
+                const isMail = x.key.includes('@');
+                const cust = cmRows.find(r => cmKey(r.email) === cmKey(x.key));
+                const wa = cust && cust.phone ? 'https://wa.me/94' + cmDigits(cust.phone).replace(/^0/, '') + '?text=' + encodeURIComponent(`Hi ${cust.name}! 🛒 ඔබගේ cart එකේ items තවම තියෙනවා (${x.label}). Order එක complete කරන්න SmartParts වෙත එන්න!`) : '';
+                return `<tr><td>${escapeHTML(isMail ? x.key : 'Guest ' + x.key.slice(0, 8))}${cust ? '<br><small style="color:var(--text-muted)">' + escapeHTML(cust.name) + '</small>' : ''}</td><td style="max-width:320px"><small>${escapeHTML(x.label)}</small></td><td>${cmLKR(x.total)}</td><td>${escapeHTML(orderAgo(x.ts))}</td><td>${wa ? `<a class="btn-primary" style="text-decoration:none;display:inline-block" target="_blank" rel="noopener" href="${wa}">💬 Remind</a>` : ''}${isMail ? `<a class="btn-primary" style="text-decoration:none;display:inline-block" href="mailto:${encodeURIComponent(x.key)}?subject=${encodeURIComponent('Your SmartParts cart is waiting 🛒')}&body=${encodeURIComponent('Hi, your cart still has: ' + x.label)}">✉ Email</a>` : ''}</td></tr>`;
+            }).join('')}</tbody></table></div>` : '<p style="color:var(--text-muted)">මේ කාලයට abandoned carts නැහැ 🎉</p>');
+        };
 
         // 4. Coupons + Delete
         document.getElementById('couponForm').addEventListener('submit', async (e) => {
@@ -2514,8 +2902,11 @@
             document.getElementById('oTitle').value = v.title || '';
             document.getElementById('oPercent').value = v.percent || '';
             document.getElementById('oExpiry').value = v.expires_at ? toLocalInput(v.expires_at) : '';
+            document.getElementById('oStart').value = v.starts_at ? toLocalInput(v.starts_at) : '';
             document.getElementById('oEnabled').value = v.enabled ? '1' : '0';
-            const live = v.enabled && new Date(v.expires_at) > new Date();
+            const sched = v.enabled && v.starts_at && new Date(v.starts_at) > new Date();
+            const live = v.enabled && new Date(v.expires_at) > new Date() && !sched;
+            if (sched) { st.textContent = `⏳ SCHEDULED — ${v.percent}% off starts ${new Date(v.starts_at).toLocaleString()} (until ${new Date(v.expires_at).toLocaleString()})`; return; }
             st.textContent = live ? `✅ LIVE — ${v.percent}% off until ${new Date(v.expires_at).toLocaleString()}` : '⏸️ No offer is live right now.';
         }
         async function saveOffer(value) {
@@ -2527,7 +2918,9 @@
             const percent = parseFloat(document.getElementById('oPercent').value);
             const exp = new Date(document.getElementById('oExpiry').value);
             if (!(percent > 0 && percent < 100) || isNaN(exp)) { alert('Enter a valid % (1-99) and expiry.'); return; }
-            saveOffer({ enabled: document.getElementById('oEnabled').value === '1', title: document.getElementById('oTitle').value.trim(), percent, expires_at: exp.toISOString() });
+            const stv = document.getElementById('oStart').value, stD = stv ? new Date(stv) : null;
+            if (stD && !isNaN(stD) && stD >= exp) { alert('Start time එක expiry එකට කලින් වෙන්න ඕන.'); return; }
+            saveOffer({ enabled: document.getElementById('oEnabled').value === '1', title: document.getElementById('oTitle').value.trim(), percent, expires_at: exp.toISOString(), starts_at: (stD && !isNaN(stD)) ? stD.toISOString() : null });
         });
         window.turnOffOffer = function() {
             saveOffer({ enabled: false, title: document.getElementById('oTitle').value.trim(), percent: parseFloat(document.getElementById('oPercent').value) || 0, expires_at: new Date().toISOString() });
